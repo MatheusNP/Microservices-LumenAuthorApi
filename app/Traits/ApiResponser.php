@@ -10,11 +10,11 @@ trait ApiResponser {
     /**
      * Build success responses;
      *
-     * @param array $data
+     * @param object $data
      * @param integer $code
      * @return JsonResponse
      */
-    public function successResponse(array $data, int $code = Response::HTTP_OK): JsonResponse
+    public function successResponse(object $data, int $code = Response::HTTP_OK): JsonResponse
     {
         return response()->json(['data' => $data], $code);
     }
@@ -22,11 +22,11 @@ trait ApiResponser {
     /**
      * Build error responses;
      *
-     * @param array $message
+     * @param string $message
      * @param integer $code
      * @return JsonResponse
      */
-    public function errorResponse(array $message, int $code): JsonResponse
+    public function errorResponse(string $message, int $code): JsonResponse
     {
         return response()->json(['error' => $message, 'code' => $code], $code);
     }
